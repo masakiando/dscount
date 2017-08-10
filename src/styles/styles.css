@@ -4,8 +4,8 @@
 body {
   background-color: #ffffff;
 }
-h1, h2, p, ul, li {
-  font-family: Helvetica, Arial, sans-serif;
+h1, h2, p, ul, li, a, p {
+  font-family: Nanum Gothic, Arial, sans-serif;
 }
 .homepage div a {
   text-decoration: underline;
@@ -28,7 +28,7 @@ h1, h2, p, ul, li {
     display: grid;
     grid-template-rows: 50px;
     grid-template-columns:
-    50px 155px 135px 1fr 60px 60px 100px 100px 70px 70px 300px 50px;
+    50px 155px 135px 115px 60px 60px 100px 100px 70px 70px 300px 50px;
 		text-align: center;
 		font-weight: 600;
     background-color: #EEEEEE;
@@ -46,7 +46,7 @@ h1, h2, p, ul, li {
 /* サーチ */
 .field {
   margin-top: 6px;
-  border-color: gray;
+  background-color: #EEEEEE;
 }
 .field>button {
   /*border:none;*/
@@ -133,7 +133,7 @@ h1, h2, p, ul, li {
 #itemK {
     grid-row: 1 / 2;
     grid-column: 11 / 12;
-    /*background: #f88;*/
+    background: #EEEEEE;
 }
 #itemL {
     grid-row: 1 / 2;
@@ -141,28 +141,54 @@ h1, h2, p, ul, li {
     /*background: #f88;*/
 }
 /* フッターコンテナ */
-#f-container {
+#f-top-line-container {
+  display: grid;
+  grid-template-columns: 1265px;
+  grid-template-rows: 2px;
+}
+#f-top-container {
     display: grid;
     grid-template-columns:
-    50px 60px 120px 60px 60px 60px 60px 120px 120px 1fr 60px 60px 60px 70px 50px;
+    50px 60px 120px 60px 60px 60px 60px 120px 120px 80px 60px 60px 60px 70px 50px;
     grid-template-rows: 50px;
-    grid-gap: 11px;
+    grid-gap: 10px;
 		text-align: center;
 		font-weight: 400;
     /*background-color: #EEEEEE;*/
-    border-top: solid 2px #000000;
+}
+#f-space-container {
+    display: grid;
+    grid-template-columns: 50px 1165px 50px;
+    grid-template-rows: 20px;
+}
+#f-main-container {
+    display: grid;
+    grid-template-columns: 50px 582.5px 582.5px 50px;
+    grid-template-rows: 50px 150px 100px;
+    font-size: 11px;
+    color: #666666;
+}
+.f-link_box-copy_right {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 .f-link_box div{
   /*background-color: #EEEEEE;*/
 }
 .f-link_box a{
 	font-size: 11px;
-	color: #000000;
+	color: #666666;
 }
 .f-link_box a:hover{
   text-decoration: inherit;
 }
 /* フッターアイテム */
+#itemF-T-L-A {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    background: #000000;
+}
+/*f-top-container*/
 #itemF-A {
     line-height: 49px;
     grid-row: 1 / 2;
@@ -252,4 +278,88 @@ h1, h2, p, ul, li {
     grid-row: 1 / 2;
     grid-column: 15 / 16;
     /* background: #88f; */
+}
+/*f-main-container*/
+#itemF-M-A {
+    line-height: 50px;
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    /*background: rgb(245, 105, 105);*/
+}#itemF-M-B {
+    line-height: 50px;
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+    /*background: rgb(40, 133, 209);*/
+}
+#itemF-M-C {
+    line-height: 50px;
+    grid-row: 1 / 2;
+    grid-column: 3 / 4;
+    /*background: rgb(120, 215, 105);*/
+}
+#itemF-M-D {
+    line-height: 50px;
+    grid-row: 1 / 2;
+    grid-column: 4 / 5;
+    /*background: rgb(221, 136, 255);*/
+}
+#itemF-M-E {
+    line-height: 100px;
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    /*background: rgb(245, 105, 105);*/
+}
+#itemF-M-F {
+    /*line-height: 100px;*/
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    /*background: rgb(40, 133, 209);*/
+    margin-top: 10px;
+}
+#itemF-M-G {
+    margin-top: 10px;
+    /*line-height: 100px;*/
+    grid-row: 2 / 3;
+    grid-column: 3 / 4;
+    /*background: rgb(120, 215, 105);*/
+    padding-left: 150px;
+}
+#itemF-M-H {
+    line-height: 100px;
+    grid-row: 2 / 3;
+    grid-column: 4 / 5;
+    /*background: rgb(221, 136, 255);*/
+}
+
+#itemF-M-I {
+    line-height: 50px;
+    grid-row: 3 / 4;
+    grid-column: 1 / 2;
+    background: rgb(245, 105, 105);
+}
+#itemF-M-J {
+    line-height: 50px;
+    grid-row: 3 / 4;
+    grid-column: 2 / 3;
+    background: rgb(40, 133, 209);
+}
+#itemF-M-K {
+    line-height: 50px;
+    grid-row: 3 / 4;
+    grid-column: 3 / 4;
+    background: rgb(120, 215, 105);
+}
+#itemF-M-L {
+    line-height: 50px;
+    grid-row: 3 / 4;
+    grid-column: 4 / 5;
+    background: rgb(221, 136, 255);
+}
+
+/*f-space-container*/
+#itemF-S-B {
+    line-height: 30px;
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+    border-top: solid 1px gray;
 }
