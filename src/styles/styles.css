@@ -363,3 +363,26 @@ h1, h2, p, ul, li, a, p {
     grid-column: 2 / 3;
     border-top: solid 1px gray;
 }
+#h-top_brand-container {
+    display: grid;
+    grid-template-columns:
+         38.5px 300px 300px 300px 300px 38.5px;
+    grid-template-rows:
+     50px
+    450px
+     50px;
+}
+#h-top_brandA {
+    grid-row: 2 / 2;
+    grid-column: 2 / 3;
+}
+#h-top_brandB {
+    grid-row: 2 / 3;
+    grid-column: 3 / 4;
+}#h-top_brandC {
+    grid-row: 2 / 3;
+    grid-column: 4 / 5;
+}#h-top_brandD {
+    grid-row: 2 / 3;
+    grid-column: 5 / 6;
+}
