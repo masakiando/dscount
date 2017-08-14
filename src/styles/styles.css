@@ -390,7 +390,7 @@ h1, h2, p, ul, li, a, p {
   position: absolute;/*絶対配置*/
   color: rgb(212, 45, 40);/*文字は白に*/
   top: 0;
-  left: 100px;/*絶対配置 px忘れない*/
+  left: 50px;/*絶対配置 px忘れない*/
 }
 /*this grid in column 1 */
 #h-top_img-inside_bar {
@@ -445,4 +445,9 @@ h1, h2, p, ul, li, a, p {
 }
 .discount{
   text-decoration: line-through;
+}
+.aaa {
+  width: 500px;
+  margin: auto;
+  padding: inherit;
 }
