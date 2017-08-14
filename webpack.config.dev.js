@@ -25,6 +25,18 @@ export default {
   ],
   module: {
     loaders: [
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loaders: [
+          'file?hash=sha512&digest=hex&name=[hash].[ext]',
+          'image-webpack-loader?{gifsicle: {interlaced: true}, optipng: {optimizationLevel: 7}, pngquant:{quality: "65-90", speed: 4}, mozjpeg: {quality: 65}}'
+        ]
+      },
+      {
+        test: /\.scss$/,
+        loader: 'style!css!sass?outputStyle=expanded&' + 'includePaths[]=' +
+                  (path.resolve(__dirname, './node_modules'))
+      },
       {test: /\.js$/, include: path.join(__dirname, 'src'), loaders: ['babel']},
       {test: /(\.css)$/, loaders: ['style', 'css']},
       {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file'},
