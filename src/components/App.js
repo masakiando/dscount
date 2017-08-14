@@ -1,6 +1,7 @@
 import React, {PropTypes} from 'react';
 import Header from './common/Header';
 import Footer from './common/Footer';
+import Slider from 'react-slick';
 
 class App extends React.Component {
   render() {
