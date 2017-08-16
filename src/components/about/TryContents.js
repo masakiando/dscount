@@ -10,23 +10,70 @@ class TryContents extends React.Component {
       slidesToShow: 1,
       slidesToScroll: 1,
       autoplay: true,
-      autoplaySpeed: 2000,
+      autoplaySpeed: 3000,
       rtl: true
     };
     const div = {
       dots: true
     };
     return (
-      <div className="aaa">
-        <h2>Right to Left</h2>
+      <div className="h-top_img-container-N">
         <Slider {...settings} >
-          <div><h3>1</h3></div>
-          <div><h3>2</h3></div>
-          <div><h3>3</h3></div>
-          <div><h3>4</h3></div>
-          <div><h3>5</h3></div>
-          <div><h3>6</h3></div>
+          <div>
+            <a href="#top">
+              <img
+                src="//www.dzimg.com/mainbanner/26_p1.jpg"
+                alt="dscount"
+              />
+            </a>
+          </div>
+          <div>
+            <a href="#top">
+              <img
+                src="//www.dzimg.com/mainbanner/26_p1.jpg"
+                alt="dscount"
+              />
+            </a>
+          </div>
+          <div>
+            <a href="#top">
+              <img
+                src="//www.dzimg.com/mainbanner/26_p1.jpg"
+                alt="dscount"
+              />
+            </a>
+          </div>
+          <div>
+            <a href="#top">
+              <img
+                src="//www.dzimg.com/mainbanner/26_p1.jpg"
+                alt="dscount"
+              />
+            </a>
+          </div>
+          <div>
+            <a href="#top">
+              <img
+                src="//www.dzimg.com/mainbanner/26_p1.jpg"
+                alt="dscount"
+              />
+            </a>
+          </div>
+          <div>
+            <a href="#top">
+              <img
+                src="//www.dzimg.com/mainbanner/26_p1.jpg"
+                alt="dscount"
+              />
+            </a>
+          </div>
         </Slider>
+        <div id="h-top_img-inside_bar-N">
+          <a href="#1"><img src="http://cdn.dscount.com/images_2016/main/shop_bt01.png" alt="dscount1185 * 500"/></a>
+          <a href="#2"><img src="http://cdn.dscount.com/images_2016/main/shop_bt02.png" alt="dscount"/></a>
+          <a href="#3"><img src="http://cdn.dscount.com/images_2016/main/shop_bt03.png" alt="dscount"/></a>
+          <a href="#4"><img src="http://cdn.dscount.com/images_2016/main/shop_bt04.png" alt="dscount"/></a>
+        </div>
       </div>
     );
   }

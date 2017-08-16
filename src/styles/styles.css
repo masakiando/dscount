@@ -78,17 +78,16 @@ h1, h2, p, ul, li, a, p {
     grid-column: 1 / 2;
     /* background: #f88 */
 }
-#itemB {
+/*#itemB {
     line-height: 49px;
     grid-row: 1 / 2;
     grid-column: 2 / 3;
-    /* background: #8f8; */
 }
-#iitemB {
+#itemC {
+    line-height: 49px;
     grid-row: 1 / 2;
     grid-column: 3 / 4;
-    /* background: #88f; */
-}
+}*/
 #itemD {
     grid-row: 1 / 2;
     grid-column: 4 / 5;
@@ -385,15 +384,13 @@ h1, h2, p, ul, li, a, p {
 .h-top_img-container {/*親div*/
   position: relative;/*相対配置*/
 }
+/*this grid in column 1 */
 /*classが持つdivに対して適応*/
-.h-top_img-container div {
+#h-top_img-inside_bar {
   position: absolute;/*絶対配置*/
-  color: rgb(212, 45, 40);/*文字は白に*/
+  z-index: 2;
   top: 0;
   left: 50px;/*絶対配置 px忘れない*/
-}
-/*this grid in column 1 */
-#h-top_img-inside_bar {
   display: grid;
   grid-template-columns: 275px;
   grid-template-rows: repeat(4, 100px);;
@@ -446,8 +443,25 @@ h1, h2, p, ul, li, a, p {
 .discount{
   text-decoration: line-through;
 }
-.aaa {
-  width: 500px;
-  margin: auto;
+.h-top_img-container-N {
+  width: 1185px;
+  margin-left: 50px;
   padding: inherit;
+  position: relative;
+}
+.h-top_img-container-N a img {
+  margin: 0px auto;
+  border: 0px;
+}
+.h-top_img-container-N div {
+  margin: 0px auto;
+}
+#h-top_img-inside_bar-N {
+  position: absolute;/*絶対配置*/
+  z-index: 2;
+  top: 0;
+  left: 0px;/*絶対配置 px忘れない*/
+  display: grid;
+  grid-template-columns: 275px;
+  grid-template-rows: repeat(4, 100px);;
 }
