@@ -372,29 +372,6 @@ h1, h2, p, ul, li, a, p {
     padding-right: 50px;
     padding-bottom: 50px;
 }
-#h-top_img-container a img{
-    margin: 0px auto;
-}
-.top {
-  height: 500px;
-  width: 1185px;
-  text-align: center;
- }
- /*親子関係*/
-.h-top_img-container {/*親div*/
-  position: relative;/*相対配置*/
-}
-/*this grid in column 1 */
-/*classが持つdivに対して適応*/
-#h-top_img-inside_bar {
-  position: absolute;/*絶対配置*/
-  z-index: 2;
-  top: 0;
-  left: 50px;/*絶対配置 px忘れない*/
-  display: grid;
-  grid-template-columns: 275px;
-  grid-template-rows: repeat(4, 100px);;
-}
 /*h-top_brand-container*/
 #h-top_brand-container {
     display: grid;
@@ -404,6 +381,7 @@ h1, h2, p, ul, li, a, p {
     padding-left: 50px;
     padding-right: 50px;
     padding-bottom: 50px;
+    margin-top: 50px;
 }
 #h-top_brand-container img{
   margin: 0px auto;
