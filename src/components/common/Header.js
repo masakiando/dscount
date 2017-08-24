@@ -11,21 +11,21 @@ class Header extends React.Component {
       <div id="container" className="link_box">
         <div id="itemA"></div>
         <div id="itemB">
-          <a href="#">
+          <Link to="/">
             <img src=" http://cdn.dscount.com/images_2016/top/ntop_all02.jpg" alt="dscount"/>
-          </a>
+          </Link>
         </div>
         <div id="itemC">
-          <a href="#">
+          <Link to="/">
             <img src=" http://cdn.dscount.com/images_2016/top/btn_dscoupon02.jpg" alt="dscount"/>
-          </a>
+          </Link>
         </div>
         <div id="itemD"></div>
         <div id="itemE">
-          <a href="#" >ログイン</a>
+          <Link to="" >ログイン</Link>
         </div>
         <div id="itemF">
-          <a href="#" >会員登録</a>
+          <Link to="/signup">会員登録</Link>
         </div>
         <div id="itemG">
           <a href="#" >マイページ{" "}▼</a>
