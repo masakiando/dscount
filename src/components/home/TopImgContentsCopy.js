@@ -37,7 +37,7 @@ class TopImgContents extends React.Component {
     this.dips();
   }
   dips() {
-    console.log(this.state.count % 4 + 1);
+    // console.log(this.state.count % 4 + 1);
     if (1 === this.state.count % 4 + 1) {
         this.setState({a: true});
         this.setState({b: false});
@@ -78,7 +78,7 @@ class TopImgContents extends React.Component {
       // height: '100vh',
       width: 275,
       background: '#45B0F9'
-    }
+    };
     return (
       <div id="h-top_img-container" className="h-top_img-container">
         {a && <a href="#"><img onClick={this.countUp} className="top" src="//www.dzimg.com/mainbanner/26_p1.jpg" alt="A"/></a>}
