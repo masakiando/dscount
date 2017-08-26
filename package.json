@@ -15,11 +15,12 @@
   "license": "MIT",
   "dependencies": {
     "babel-polyfill": "6.8.0",
-    "bootstrap": "3.3.6",
+    "bootstrap": "^3.3.6",
     "jquery": "2.2.3",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-addons-css-transition-group": "^15.6.0",
+    "react-bootstrap": "^0.31.2",
     "react-dom": "^15.6.1",
     "react-redux": "4.4.5",
     "react-router": "2.4.0",
