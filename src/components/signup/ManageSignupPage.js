@@ -10,20 +10,14 @@ class ManageSignupPage extends React.Component {
         username: ''
       }
     };
-    this.updaTetargetState = this.updaTetargetState.bind(this);
   }
-  updaTetargetState(event) {
-    this.setState({
-       [event.target.name]: event.target.value
-     });
-  }
+
   render() {
     return (
       <div>
       <SignupPageHead />
       <SignupForm
-        onChange={this.updaTetargetState}
-        signup={this.state.signup}
+
       />
       </div>
     );
