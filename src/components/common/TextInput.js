@@ -7,15 +7,14 @@ const TextInput = ({
   onChange
 }) => {
   return (
-    <div className="form-group">
+  <div>
       <label htmlFor={name}>{label}</label>
-      <div className="field">
+      <div>
         <input
           name={name}
           value={value}
           onChange={onChange}
           type="text"
-          className="form-control"
         />
       </div>
     </div>

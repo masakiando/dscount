@@ -1,4 +1,5 @@
 import React, {PropTypes} from 'react';
+import TextInput from '../common/TextInput';
 
 const SignupForm = ({
   signup,
@@ -116,8 +117,9 @@ const SignupForm = ({
       </div>
       <h4>2. 情報の入力</h4>
         <div>
-          <input
-            type="text"
+          <TextInput
+            name="username"
+            label="名前"
             onChange={onChange}
             value={signup.username}
           />
@@ -133,7 +135,7 @@ const SignupForm = ({
 };
 
 SignupForm.propTypes = {
-  signup: PropTypes.array.isRequired,
+  signup: PropTypes.object.isRequired,
   signupes: PropTypes.array.isRequired,
   onChange: PropTypes.func.isRequired,
   onClick: PropTypes.func.isRequired,
