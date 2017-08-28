@@ -1,4 +1,6 @@
 import React, {PropTypes} from 'react';
+import {connect} from 'react-redux';
+import * as signupActions from '../../actions/signupActions';
 import SignupPageHead from './SignupPageHead';
 import SignupForm from './SignupForm';
 
@@ -17,13 +19,20 @@ class ManageSignupPage extends React.Component {
     this.setState({signup: signup});
   }
   onClickSave() {
-    alert(`Saveing ${this.state.signup.username}`);
+    // alert(`Saveing ${this.state.signup.username}`);
+    this.props.dispatch(signupActions.userSignupRequest(this.state.signup));
   }
+
+  signupRow(signup, index) {
+    return <div key={index}>{signup.username}</div>;
+  }
+
   render() {
     return (
       <div>
       <SignupPageHead />
       <SignupForm />
+      {this.props.signup.map(this.signupRow)}
       <div>
         <input
           type="text"
@@ -41,4 +50,18 @@ class ManageSignupPage extends React.Component {
   }
 }
 
-export default ManageSignupPage;
+ManageSignupPage.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+  signup: PropTypes.array.isRequired
+};
+
+function mapStateToProps(state, ownProps) {
+  return {
+    signup: state.signup
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  null
+)(ManageSignupPage);
