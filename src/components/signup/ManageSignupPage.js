@@ -14,13 +14,15 @@ class ManageSignupPage extends React.Component {
     this.onSignupChange = this.onSignupChange.bind(this);
     this.onClickSave = this.onClickSave.bind(this);
   }
+
   onSignupChange(event) {
     const signup = this.state.signup;
     signup.username = event.target.value;
     this.setState({signup: signup});
   }
-  onClickSave() {
-    // alert(`Saveing ${this.state.signup.username}`);
+
+  onClickSave(event) {
+    event.preventDefault();
     this.props.actions.userSignupRequest(this.state.signup);
   }
 
@@ -32,20 +34,13 @@ class ManageSignupPage extends React.Component {
     return (
       <div>
       <SignupPageHead />
-      <SignupForm />
-      {this.props.signup.map(this.signupRow)}
-      <div>
-        <input
-          type="text"
-          onChange={this.onSignupChange}
-          value={this.state.signup.username}
-        />
-        <input
-          type="submit"
-          value="Save"
-          onClick={this.onClickSave}
-        />
-      </div>
+      <SignupForm
+        signup={this.state.signup}
+        onChange={this.onSignupChange}
+        onClick={this.onClickSave}
+        signupes={this.props.signup}
+        signupRow={this.signupRow}
+      />
       </div>
     );
   }

@@ -1,6 +1,12 @@
 import React, {PropTypes} from 'react';
 
-const SignupForm = () => {
+const SignupForm = ({
+  signup,
+  signupes,
+  onChange,
+  onClick,
+  signupRow
+}) => {
     const gridStyle = {
       display: "grid",
       gridTemplateColumns: "auto",
@@ -55,7 +61,7 @@ const SignupForm = () => {
 
       제4조 회원자격 정지 및 자격제한
       "몰"은 회원이 다음에 해당되는 경우 별도의 통보절차 없이 회원의 자격을 정지할 수 있습니다.
-    `
+    `;
     const textarea_b = `
       ■ 수집하는 개인정보 항목
 
@@ -80,7 +86,7 @@ const SignupForm = () => {
        보존 기간 : 5년
 
       대금결제 및 재화 등의 공급에 관한 기록 : 5년 (전자상거래등에서의 소비자보호에 관한 법률)
-    `
+    `;
   return (
     <form style={gridStyle}>
       <h4>1. 利用規約に同意</h4>
@@ -109,8 +115,29 @@ const SignupForm = () => {
         </table>
       </div>
       <h4>2. 情報の入力</h4>
-
+        <div>
+          <input
+            type="text"
+            onChange={onChange}
+            value={signup.username}
+          />
+          <input
+            type="submit"
+            value="Save"
+            onClick={onClick}
+          />
+        </div>
+        {signupes.map(signupRow)}
     </form>
   );
 };
+
+SignupForm.propTypes = {
+  signup: PropTypes.array.isRequired,
+  signupes: PropTypes.array.isRequired,
+  onChange: PropTypes.func.isRequired,
+  onClick: PropTypes.func.isRequired,
+  signupRow: PropTypes.func.isRequired
+};
+
 export default SignupForm;
