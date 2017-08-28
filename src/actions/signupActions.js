@@ -1,3 +1,5 @@
+import * as types from './actionTypes';
+
 export function userSignupRequest(userData) {
-  return { type: 'CREATE_SIGNUP', userData}
+  return { type: types.CREATE_SIGNUP, userData };
 }
