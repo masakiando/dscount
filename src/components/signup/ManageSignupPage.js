@@ -20,7 +20,7 @@ class ManageSignupPage extends React.Component {
   }
   onClickSave() {
     // alert(`Saveing ${this.state.signup.username}`);
-    this.props.dispatch(signupActions.userSignupRequest(this.state.signup));
+    this.props.userSignupRequest(this.state.signup);
   }
 
   signupRow(signup, index) {
@@ -51,7 +51,7 @@ class ManageSignupPage extends React.Component {
 }
 
 ManageSignupPage.propTypes = {
-  dispatch: PropTypes.func.isRequired,
+  userSignupRequest: PropTypes.func.isRequired,
   signup: PropTypes.array.isRequired
 };
 
@@ -61,7 +61,13 @@ function mapStateToProps(state, ownProps) {
   };
 }
 
+function mapDispatchToProps(dispatch) {
+  return {
+    userSignupRequest: signup => dispatch(signupActions.userSignupRequest(signup))
+  };
+}
+
 export default connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(ManageSignupPage);
