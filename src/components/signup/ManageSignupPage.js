@@ -9,7 +9,20 @@ class ManageSignupPage extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      signup: { username: '' }
+      signup: {
+        name: '',
+        username: '',
+        password: '',
+        passwordConfirmation: '',
+        birthday: '',
+        gender: '',
+        postalCode: '',
+        address: '',
+        email: '',
+        mobilePhoneNumber: '',
+        receiveEmail: '',
+        receiveSNS: ''
+       }
     };
     this.onSignupChange = this.onSignupChange.bind(this);
     this.onClickSave = this.onClickSave.bind(this);
