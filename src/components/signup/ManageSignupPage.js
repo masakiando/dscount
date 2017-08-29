@@ -29,8 +29,9 @@ class ManageSignupPage extends React.Component {
   }
 
   onSignupChange(event) {
-    const signup = this.state.signup;
-    signup.username = event.target.value;
+    let signup = this.state.signup;
+    const field = event.target.name;
+    signup[field] = event.target.value;
     this.setState({signup: signup});
   }
 
@@ -40,7 +41,22 @@ class ManageSignupPage extends React.Component {
   }
 
   signupRow(signup, index) {
-    return <div key={index}>{signup.username}</div>;
+    return (
+      <div key={index}>
+        {signup.name} +
+        {signup.username} +
+        {signup.password} +
+        {signup.passwordConfirmation} +
+        {signup.birthday} +
+        {signup.gender} +
+        {signup.postalCode} +
+        {signup.address} +
+        {signup.email} +
+        {signup.mobilePhoneNumber} +
+        {signup.receiveEmail} +
+        {signup.receiveSNS} !!!!
+      </div>
+    );
   }
 
   render() {
