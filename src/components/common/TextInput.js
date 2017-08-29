@@ -8,7 +8,9 @@ const TextInput = ({
 }) => {
   return (
   <div>
-      <label htmlFor={name}>{label}</label>
+      <label
+        htmlFor={name}>{label}
+      </label>
       <div>
         <input
           name={name}
