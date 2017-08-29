@@ -141,15 +141,17 @@ const SignupForm = ({
                  <div className="form-group">
                    <TextField inputStyle={textFieldStyle}
                      name="name"
-                     floatingLabelText="Name"
+                     floatingLabelText="名前"
                      onChange={onChange}
-                     value={signup.username}
+                     value={signup.name}
                   />
                  </div>
                  <div className="form-group">
-                   <TextField
-                     name="email"
-                     floatingLabelText="Email"
+                   <TextField inputStyle={textFieldStyle}
+                     name="username"
+                     floatingLabelText="ユーザ名"
+                     onChange={onChange}
+                     value={signup.username}
                    />
                  </div>
                  <div className="form-group">
@@ -157,6 +159,97 @@ const SignupForm = ({
                      name="password"
                      type="password"
                      floatingLabelText="Password"
+                     onChange={onChange}
+                     value={signup.password}
+                   />
+                 </div>
+                 <div className="form-group">
+                   <TextField
+                     name="passwordConfirmation"
+                     type="password"
+                     floatingLabelText="Passwordの確認　"
+                     onChange={onChange}
+                     value={signup.passwordConfirmation}
+                   />
+                 </div>
+                 <div className="form-group">
+                   <TextField
+                     name="birthday"
+                     type="text"
+                     floatingLabelFixed={true}
+                     floatingLabelText="生年月日"
+                     onChange={onChange}
+                     value={signup.birthday}
+                   />
+                 </div>
+                 <div className="form-group">
+                   <TextField
+                     name="gender"
+                     type="text"
+                     floatingLabelFixed={true}
+                     floatingLabelText="性別"
+                     onChange={onChange}
+                     value={signup.gender}
+                   />
+                 </div>
+                 <div className="form-group">
+                   <TextField
+                     name="postalCode"
+                     type="text"
+                     floatingLabelFixed={true}
+                     floatingLabelText="郵便番号"
+                     onChange={onChange}
+                     value={signup.postalCode}
+                   />
+                 </div>
+                 <div className="form-group">
+                   <TextField
+                     name="address"
+                     type="text"
+                     floatingLabelFixed={true}
+                     floatingLabelText="住所"
+                     onChange={onChange}
+                     value={signup.address}
+                   />
+                 </div>
+                 <div className="form-group">
+                   <TextField
+                     name="email"
+                     type="text"
+                     floatingLabelFixed={true}
+                     floatingLabelText="E-mail"
+                     onChange={onChange}
+                     value={signup.email}
+                   />
+                 </div>
+                 <div className="form-group">
+                   <TextField
+                     name="mobilePhoneNumber"
+                     type="text"
+                     floatingLabelFixed={true}
+                     floatingLabelText="携帯電話"
+                     onChange={onChange}
+                     value={signup.mobilePhoneNumber}
+                   />
+                 </div>
+                 <div className="form-group">
+                   <TextField
+                     name="receiveEmail"
+                     type="text"
+                     floatingLabelFixed={true}
+                     floatingLabelText="メール受信"
+                     onChange={onChange}
+                     value={signup.receiveEmail}
+                   />
+                 </div>
+                 <div className="form-group">
+                   <TextField
+                     name="receiveSNS"
+                     type="text"
+                     floatingLabelFixed={true}
+                     floatingLabelText="SMSの受信"
+                     onChange={onChange}
+                     value={signup.receiveSNS}
                    />
                  </div>
                  <RaisedButton
