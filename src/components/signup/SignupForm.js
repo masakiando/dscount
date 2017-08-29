@@ -1,5 +1,18 @@
 import React, {PropTypes} from 'react';
-import TextInput from '../common/TextInput';
+
+import {MuiThemeProvider} from 'material-ui/styles';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import TextField from 'material-ui/TextField';
+import RaisedButton from 'material-ui/RaisedButton';
+
+const muiTheme = getMuiTheme({
+  palette: {
+    primary1Color: 'rgb(5, 80, 250)'
+  },
+  textField: {
+    backgroundColor: '#fff'
+  }
+});
 
 const SignupForm = ({
   signup,
@@ -8,6 +21,10 @@ const SignupForm = ({
   onClick,
   signupRow
 }) => {
+    const textFieldStyle ={
+      backgroundColor: '#fff',
+      height: "72px"
+    };
     const gridStyle = {
       display: "grid",
       gridTemplateColumns: "auto",
@@ -89,6 +106,7 @@ const SignupForm = ({
       대금결제 및 재화 등의 공급에 관한 기록 : 5년 (전자상거래등에서의 소비자보호에 관한 법률)
     `;
   return (
+  <div>
     <form style={gridStyle}>
       <h4>1. 利用規約に同意</h4>
       <div style={style}>
@@ -117,20 +135,43 @@ const SignupForm = ({
       </div>
       <h4>2. 情報の入力</h4>
         <div>
-          <TextInput
-            name="username"
-            label="名前"
-            onChange={onChange}
-            value={signup.username}
-          />
-          <input
-            type="submit"
-            value="Save"
-            onClick={onClick}
-          />
+          <MuiThemeProvider muiTheme={muiTheme}>
+            <div>
+              <form className="signupform" >
+                 <div className="form-group">
+                   <TextField inputStyle={textFieldStyle}
+                     name="name"
+                     floatingLabelText="Name"
+                     onChange={onChange}
+                     value={signup.username}
+                  />
+                 </div>
+                 <div className="form-group">
+                   <TextField
+                     name="email"
+                     floatingLabelText="Email"
+                   />
+                 </div>
+                 <div className="form-group">
+                   <TextField
+                     name="password"
+                     type="password"
+                     floatingLabelText="Password"
+                   />
+                 </div>
+                 <RaisedButton
+                   primary={true}
+                   type="submit"
+                   label="Sign Up"
+                   onClick={onClick}
+                 />
+               </form>
+            </div>
+          </MuiThemeProvider>
         </div>
         {signupes.map(signupRow)}
     </form>
+  </div>
   );
 };
 
