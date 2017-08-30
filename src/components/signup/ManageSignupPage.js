@@ -22,8 +22,8 @@ class ManageSignupPage extends React.Component {
         address: '',
         email: '',
         mobilePhoneNumber: '',
-        receiveEmail: '',
-        receiveSNS: ''
+        receiveEmail: true,
+        receiveSNS: true
        }
     };
     this.onSignupChange = this.onSignupChange.bind(this);

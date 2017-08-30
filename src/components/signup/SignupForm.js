@@ -18,7 +18,7 @@ for (let i = 0; i <= 117; i++ ) {
 
 const muiTheme = getMuiTheme({
   palette: {
-    primary1Color: 'rgb(5, 80, 250)'
+    primary1Color: 'rgb(255, 64, 129)'
   },
   textField: {
     backgroundColor: '#fff'
@@ -30,7 +30,8 @@ const styles = {
     maxWidth: 250
   },
   radioButton: {
-    marginBottom: 16
+    marginBottom: 16,
+    display: "inline-block"
   }
 };
 
@@ -42,10 +43,21 @@ const SignupForm = ({
   signupRow,
   onBirthdayChange
 }) => {
+    const aaa ={
+      primary1Color: 'rgb(255, 64, 129)'
+    }
+    const hhh = {
+      marginTop: "16px",
+      display: "grid",
+      gridTemplateColumns: "100px 1fr",
+      gridTemplateRows: "35px",
+      gridGap: "1px"
+    }
     const h4Styel = {
       marginTop: "40px"
     };
     const h5Styel = {
+      margin: "0 auto",
       fontWeight: 700,
       fontSize: "16px",
       fontFamily: "Roboto, sans-serif",
@@ -238,7 +250,7 @@ const SignupForm = ({
 
                  <div className="form-group">
                    <h5 style={h5Styel}>性別 *</h5>
-                   <RadioButtonGroup
+                   <RadioButtonGroup style={hhh}
                      name="gender"
                      onChange={onChange}
                      >
@@ -298,7 +310,7 @@ const SignupForm = ({
                  </div>
                  <div className="form-group">
                    <h4>メール受信</h4>
-                   <RadioButtonGroup
+                   <RadioButtonGroup style={hhh}
                      label="メール受信"
                      name="receiveEmail"
                      defaultSelected={signup.receiveEmail}
@@ -320,7 +332,7 @@ const SignupForm = ({
                  </div>
                  <div className="form-group">
                    <h4>SMSの受信</h4>
-                   <RadioButtonGroup
+                   <RadioButtonGroup style={hhh}
                      name="receiveSNS"
                      defaultSelected={signup.receiveSNS}
                      onChange={onChange}
