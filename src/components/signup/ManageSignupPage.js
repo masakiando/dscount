@@ -15,7 +15,7 @@ class ManageSignupPage extends React.Component {
         password: '',
         passwordConfirmation: '',
         birthday: {
-          year: 1980
+          year: 1970
         },
         gender: '',
         postalCode: '',
@@ -30,13 +30,16 @@ class ManageSignupPage extends React.Component {
     this.onClickSave = this.onClickSave.bind(this);
     this.onBirthdayChange = this.onBirthdayChange.bind(this);
   }
-
+// parseInt(str, 10);
   onBirthdayChange(event, index, value) {
-    console.log(event.target.innerText);
     debugger;
-    if(/n/.test(value)) {
+    if(/年/.test(event.target.innerText)) {
+      let yearStr = event.target.innerText.replace( /年/g , "" );
+      console.log(yearStr);
+      let yearNumber = parseInt(yearStr, 10);
+      console.log(yearNumber);
       let signup = this.state.signup;
-      signup.birthday.year = value;
+      signup.birthday.year = yearNumber;
       this.setState({signup: signup});
     }
   }

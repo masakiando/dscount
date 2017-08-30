@@ -172,6 +172,7 @@ const SignupForm = ({
                      name="name"
                      type="text"
                      floatingLabelText="名前 *"
+                     floatingLabelFixed={true}
                      onChange={onChange}
                      value={signup.name}
                   />
@@ -180,6 +181,7 @@ const SignupForm = ({
                    <TextField inputStyle={textFieldStyle}
                      name="username"
                      type="text"
+                     floatingLabelFixed={true}
                      floatingLabelText="ユーザ名 *"
                      onChange={onChange}
                      value={signup.username}
@@ -190,6 +192,7 @@ const SignupForm = ({
                      name="password"
                      type="password"
                      floatingLabelText="Password *"
+                     floatingLabelFixed={true}
                      onChange={onChange}
                      value={signup.password}
                    />
@@ -198,6 +201,7 @@ const SignupForm = ({
                    <TextField
                      name="passwordConfirmation"
                      type="password"
+                     floatingLabelFixed={true}
                      floatingLabelText="Passwordの確認 *"
                      onChange={onChange}
                      value={signup.passwordConfirmation}
@@ -205,8 +209,25 @@ const SignupForm = ({
                  </div>
 
                  <div className="form-group">
+                   <h5 style={h5Styel}>生年月日 *</h5>
                    <SelectField
-                     floatingLabelText="生年月日"
+                     floatingLabelText="年"
+                     value={signup.birthday.year}
+                     onChange={onBirthdayChange}
+                     maxHeight={200}
+                   >
+                    {items}
+                   </SelectField>
+                   <SelectField
+                     floatingLabelText="月"
+                     value={signup.birthday.year}
+                     onChange={onBirthdayChange}
+                     maxHeight={200}
+                   >
+                    {items}
+                   </SelectField>
+                   <SelectField
+                     floatingLabelText="日"
                      value={signup.birthday.year}
                      onChange={onBirthdayChange}
                      maxHeight={200}
