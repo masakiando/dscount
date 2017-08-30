@@ -5,6 +5,17 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
+import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
+
+import SelectField from 'material-ui/SelectField';
+import MenuItem from 'material-ui/MenuItem';
+
+
+const items = [];
+for (let i = 0; i <= 117; i++ ) {
+  items.push(<MenuItem value={i + 1900} key={i + 1900} primaryText={`${i + 1900}年`} />);
+}
+
 const muiTheme = getMuiTheme({
   palette: {
     primary1Color: 'rgb(5, 80, 250)'
@@ -14,16 +25,34 @@ const muiTheme = getMuiTheme({
   }
 });
 
+const styles = {
+  block: {
+    maxWidth: 250
+  },
+  radioButton: {
+    marginBottom: 16
+  }
+};
+
 const SignupForm = ({
   signup,
   signupes,
   onChange,
   onClick,
-  signupRow
+  signupRow,
+  onBirthdayChange
 }) => {
+    const h4Styel = {
+      marginTop: "40px"
+    };
+    const h5Styel = {
+      fontWeight: 700,
+      fontSize: "16px",
+      fontFamily: "Roboto, sans-serif",
+      color: "rgba(0, 0, 0, 0.3)"
+    };
     const textFieldStyle ={
-      backgroundColor: '#fff',
-      height: "72px"
+      backgroundColor: '#fff'
     };
     const gridStyle = {
       display: "grid",
@@ -108,7 +137,7 @@ const SignupForm = ({
   return (
   <div>
     <form style={gridStyle}>
-      <h4>1. 利用規約に同意</h4>
+      <h4 style={h4Styel}>1. 利用規約に同意</h4>
       <div style={style}>
         <table className="table">
           <thead>
@@ -133,7 +162,7 @@ const SignupForm = ({
           </tbody>
         </table>
       </div>
-      <h4>2. 情報の入力</h4>
+      <h4 style={h4Styel}>2. 情報の入力</h4>
         <div>
           <MuiThemeProvider muiTheme={muiTheme}>
             <div>
@@ -141,7 +170,8 @@ const SignupForm = ({
                  <div className="form-group">
                    <TextField inputStyle={textFieldStyle}
                      name="name"
-                     floatingLabelText="名前"
+                     type="text"
+                     floatingLabelText="名前 *"
                      onChange={onChange}
                      value={signup.name}
                   />
@@ -149,7 +179,8 @@ const SignupForm = ({
                  <div className="form-group">
                    <TextField inputStyle={textFieldStyle}
                      name="username"
-                     floatingLabelText="ユーザ名"
+                     type="text"
+                     floatingLabelText="ユーザ名 *"
                      onChange={onChange}
                      value={signup.username}
                    />
@@ -158,7 +189,7 @@ const SignupForm = ({
                    <TextField
                      name="password"
                      type="password"
-                     floatingLabelText="Password"
+                     floatingLabelText="Password *"
                      onChange={onChange}
                      value={signup.password}
                    />
@@ -167,30 +198,42 @@ const SignupForm = ({
                    <TextField
                      name="passwordConfirmation"
                      type="password"
-                     floatingLabelText="Passwordの確認　"
+                     floatingLabelText="Passwordの確認 *"
                      onChange={onChange}
                      value={signup.passwordConfirmation}
                    />
                  </div>
+
                  <div className="form-group">
-                   <TextField
-                     name="birthday"
-                     type="text"
-                     floatingLabelFixed={true}
+                   <SelectField
                      floatingLabelText="生年月日"
-                     onChange={onChange}
-                     value={signup.birthday}
-                   />
+                     value={signup.birthday.year}
+                     onChange={onBirthdayChange}
+                     maxHeight={200}
+                   >
+                    {items}
+                   </SelectField>
                  </div>
+
                  <div className="form-group">
-                   <TextField
+                   <h5 style={h5Styel}>性別 *</h5>
+                   <RadioButtonGroup
                      name="gender"
-                     type="text"
-                     floatingLabelFixed={true}
-                     floatingLabelText="性別"
                      onChange={onChange}
-                     value={signup.gender}
-                   />
+                     >
+                     <RadioButton
+                       name="gender"
+                       value="male"
+                       label="男性"
+                       style={styles.radioButton}
+                     />
+                     <RadioButton
+                       name="gender"
+                       value="female"
+                       label="女性"
+                       style={styles.radioButton}
+                     />
+                  </RadioButtonGroup>　
                  </div>
                  <div className="form-group">
                    <TextField
@@ -233,24 +276,47 @@ const SignupForm = ({
                    />
                  </div>
                  <div className="form-group">
-                   <TextField
+                   <h4>メール受信</h4>
+                   <RadioButtonGroup
+                     label="メール受信"
                      name="receiveEmail"
-                     type="text"
-                     floatingLabelFixed={true}
-                     floatingLabelText="メール受信"
+                     defaultSelected={signup.receiveEmail}
                      onChange={onChange}
-                     value={signup.receiveEmail}
-                   />
+                     >
+                     <RadioButton
+                       name="receiveEmail"
+                       value={true}
+                       label="同意"
+                       style={styles.radioButton}
+                     />
+                     <RadioButton
+                       name="receiveEmail"
+                       value={false}
+                       label="同意しない"
+                       style={styles.radioButton}
+                     />
+                  </RadioButtonGroup>　
                  </div>
                  <div className="form-group">
-                   <TextField
+                   <h4>SMSの受信</h4>
+                   <RadioButtonGroup
                      name="receiveSNS"
-                     type="text"
-                     floatingLabelFixed={true}
-                     floatingLabelText="SMSの受信"
+                     defaultSelected={signup.receiveSNS}
                      onChange={onChange}
-                     value={signup.receiveSNS}
-                   />
+                     >
+                     <RadioButton
+                       name="receiveSNS"
+                       value={true}
+                       label="同意"
+                       style={styles.radioButton}
+                     />
+                     <RadioButton
+                       name="receiveSNS"
+                       value={false}
+                       label="同意しない"
+                       style={styles.radioButton}
+                     />
+                  </RadioButtonGroup>　
                  </div>
                  <RaisedButton
                    primary={true}
@@ -273,7 +339,8 @@ SignupForm.propTypes = {
   signupes: PropTypes.array.isRequired,
   onChange: PropTypes.func.isRequired,
   onClick: PropTypes.func.isRequired,
-  signupRow: PropTypes.func.isRequired
+  signupRow: PropTypes.func.isRequired,
+  onBirthdayChange: PropTypes.func.isRequired
 };
 
 export default SignupForm;

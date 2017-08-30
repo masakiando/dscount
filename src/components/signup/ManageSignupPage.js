@@ -14,7 +14,9 @@ class ManageSignupPage extends React.Component {
         username: '',
         password: '',
         passwordConfirmation: '',
-        birthday: '',
+        birthday: {
+          year: 1980
+        },
         gender: '',
         postalCode: '',
         address: '',
@@ -26,6 +28,17 @@ class ManageSignupPage extends React.Component {
     };
     this.onSignupChange = this.onSignupChange.bind(this);
     this.onClickSave = this.onClickSave.bind(this);
+    this.onBirthdayChange = this.onBirthdayChange.bind(this);
+  }
+
+  onBirthdayChange(event, index, value) {
+    console.log(event.target.innerText);
+    debugger;
+    if(/n/.test(value)) {
+      let signup = this.state.signup;
+      signup.birthday.year = value;
+      this.setState({signup: signup});
+    }
   }
 
   onSignupChange(event) {
@@ -47,7 +60,6 @@ class ManageSignupPage extends React.Component {
         {signup.username} +
         {signup.password} +
         {signup.passwordConfirmation} +
-        {signup.birthday} +
         {signup.gender} +
         {signup.postalCode} +
         {signup.address} +
@@ -69,6 +81,7 @@ class ManageSignupPage extends React.Component {
         onClick={this.onClickSave}
         signupes={this.props.signup}
         signupRow={this.signupRow}
+        onBirthdayChange={this.onBirthdayChange}
       />
       </div>
     );
