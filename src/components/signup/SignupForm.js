@@ -43,10 +43,7 @@ const SignupForm = ({
   signupRow,
   onBirthdayChange
 }) => {
-    const aaa ={
-      primary1Color: 'rgb(255, 64, 129)'
-    }
-    const hhh = {
+    const radioBtnStyle = {
       marginTop: "16px",
       display: "grid",
       gridTemplateColumns: "100px 1fr",
@@ -63,8 +60,8 @@ const SignupForm = ({
       fontFamily: "Roboto, sans-serif",
       color: "rgba(0, 0, 0, 0.3)"
     };
-    const textFieldStyle ={
-      backgroundColor: '#fff'
+    const style_of_input_in_TextField ={
+      backgroundColor: '#f88'
     };
     const gridStyle = {
       display: "grid",
@@ -178,9 +175,9 @@ const SignupForm = ({
         <div>
           <MuiThemeProvider muiTheme={muiTheme}>
             <div>
-              <form className="signupform" >
+              <form className="signupform">
                  <div className="form-group">
-                   <TextField inputStyle={textFieldStyle}
+                   <TextField inputStyle={style_of_input_in_TextField}
                      name="name"
                      type="text"
                      floatingLabelText="名前 *"
@@ -190,7 +187,7 @@ const SignupForm = ({
                   />
                  </div>
                  <div className="form-group">
-                   <TextField inputStyle={textFieldStyle}
+                   <TextField inputStyle={style_of_input_in_TextField}
                      name="username"
                      type="text"
                      floatingLabelFixed={true}
@@ -250,7 +247,7 @@ const SignupForm = ({
 
                  <div className="form-group">
                    <h5 style={h5Styel}>性別 *</h5>
-                   <RadioButtonGroup style={hhh}
+                   <RadioButtonGroup style={radioBtnStyle}
                      name="gender"
                      onChange={onChange}
                      >
@@ -309,8 +306,8 @@ const SignupForm = ({
                    />
                  </div>
                  <div className="form-group">
-                   <h4>メール受信</h4>
-                   <RadioButtonGroup style={hhh}
+                   <h5 style={h5Styel}>メール受信</h5>
+                   <RadioButtonGroup style={radioBtnStyle}
                      label="メール受信"
                      name="receiveEmail"
                      defaultSelected={signup.receiveEmail}
@@ -331,8 +328,8 @@ const SignupForm = ({
                   </RadioButtonGroup>　
                  </div>
                  <div className="form-group">
-                   <h4>SMSの受信</h4>
-                   <RadioButtonGroup style={hhh}
+                   <h5 style={h5Styel}>SMSの受信</h5>
+                   <RadioButtonGroup style={radioBtnStyle}
                      name="receiveSNS"
                      defaultSelected={signup.receiveSNS}
                      onChange={onChange}
@@ -351,12 +348,14 @@ const SignupForm = ({
                      />
                   </RadioButtonGroup>　
                  </div>
-                 <RaisedButton
-                   primary={true}
-                   type="submit"
-                   label="Sign Up"
-                   onClick={onClick}
-                 />
+                 <div className="form-group">
+                   <RaisedButton
+                     primary={true}
+                     type="submit"
+                     label="Sign Up"
+                     onClick={onClick}
+                   />
+                 </div>
                </form>
             </div>
           </MuiThemeProvider>
