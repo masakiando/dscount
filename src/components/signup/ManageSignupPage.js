@@ -74,6 +74,7 @@ class ManageSignupPage extends React.Component {
   }
 
   onClickSave(event) {
+    debugger;
     event.preventDefault();
     this.props.actions.userSignupRequest(this.state.signup);
   }
