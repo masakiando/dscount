@@ -15,7 +15,9 @@ class ManageSignupPage extends React.Component {
         password: '',
         passwordConfirmation: '',
         birthday: {
-          year: 1970
+          year: 1970,
+          month: 1,
+          day: 1
         },
         gender: '',
         postalCode: '',
@@ -33,13 +35,33 @@ class ManageSignupPage extends React.Component {
 // parseInt(str, 10);
   onBirthdayChange(event, index, value) {
     debugger;
-    if(/年/.test(event.target.innerText)) {
-      let yearStr = event.target.innerText.replace( /年/g , "" );
+    if (/年/.test(event.target.innerText)) {
+      let yearStr = event.target.innerText.replace(/年/g , "" );
       console.log(yearStr);
       let yearNumber = parseInt(yearStr, 10);
       console.log(yearNumber);
       let signup = this.state.signup;
       signup.birthday.year = yearNumber;
+      this.setState({signup: signup});
+    }
+    if (/月/.test(event.target.innerText)) {
+      console.log(event.target.innerText);
+      let monthStr = event.target.innerText.replace( /月/g , "" );
+      console.log(monthStr);
+      let monthNumber = parseInt(monthStr, 10);
+      console.log(monthNumber);
+      let signup = this.state.signup;
+      signup.birthday.month = monthNumber;
+      this.setState({signup: signup});
+    }
+    if (/日/.test(event.target.innerText)) {
+      console.log(event.target.innerText);
+      let dayStr = event.target.innerText.replace( /日/g , "" );
+      console.log(dayStr);
+      let dayNumber = parseInt(dayStr, 10);
+      console.log(dayNumber);
+      let signup = this.state.signup;
+      signup.birthday.day = dayNumber;
       this.setState({signup: signup});
     }
   }

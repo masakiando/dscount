@@ -11,11 +11,18 @@ import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 
 
-const items = [];
+const years = [];
+const months = [];
+const days = [];
 for (let i = 0; i <= 117; i++ ) {
-  items.push(<MenuItem value={i + 1900} key={i + 1900} primaryText={`${i + 1900}年`} />);
+  years.push(<MenuItem value={i + 1900} key={i + 1900} primaryText={`${i + 1900}年`} />);
 }
-
+for (let i = 0; i <= 11; i++ ) {
+  months.push(<MenuItem value={i + 1} key={i + 1} primaryText={`${i + 1}月`} />);
+}
+for (let i = 0; i <= 30; i++ ) {
+  days.push(<MenuItem value={i + 1} key={i + 1} primaryText={`${i + 1}日`} />);
+}
 const muiTheme = getMuiTheme({
   palette: {
     primary1Color: 'rgb(255, 64, 129)'
@@ -225,23 +232,23 @@ const SignupForm = ({
                      onChange={onBirthdayChange}
                      maxHeight={200}
                    >
-                    {items}
+                    {years}
                    </SelectField>
                    <SelectField
                      floatingLabelText="月"
-                     value={signup.birthday.year}
+                     value={signup.birthday.month}
                      onChange={onBirthdayChange}
                      maxHeight={200}
                    >
-                    {items}
+                    {months}
                    </SelectField>
                    <SelectField
                      floatingLabelText="日"
-                     value={signup.birthday.year}
+                     value={signup.birthday.day}
                      onChange={onBirthdayChange}
                      maxHeight={200}
                    >
-                    {items}
+                    {days}
                    </SelectField>
                  </div>
 
