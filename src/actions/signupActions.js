@@ -9,15 +9,12 @@ export function userSignupRequest(userData) {
   debugger;
   return (dispatch, getState) => {
     return fetch(
-        '/api/users', //req url
-        { // XMLHttpRequest
-        method: 'post',
-        body: JSON.stringify(userData),
-        headers: {'Content-Type': 'application/json'}
-        }
-      );
-      // .then(userData => {
-      //   dispatch(userSignupRequestNext(userData));
-      // });
+      '/api/users', //req url
+      { // XMLHttpRequest
+      method: 'post',
+      body: JSON.stringify(userData),
+      headers: {'Content-Type': 'application/json'}
+      }
+    );
   };
 }
