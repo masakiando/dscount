@@ -34,32 +34,32 @@ class ManageSignupPage extends React.Component {
   }
 // parseInt(str, 10);
   onBirthdayChange(event, index, value) {
-    debugger;
+    // debugger;
     if (/年/.test(event.target.innerText)) {
       let yearStr = event.target.innerText.replace(/年/g , "" );
-      console.log(yearStr);
+      // console.log(yearStr);
       let yearNumber = parseInt(yearStr, 10);
-      console.log(yearNumber);
+      // console.log(yearNumber);
       let signup = this.state.signup;
       signup.birthday.year = yearNumber;
       this.setState({signup: signup});
     }
     if (/月/.test(event.target.innerText)) {
-      console.log(event.target.innerText);
+      // console.log(event.target.innerText);
       let monthStr = event.target.innerText.replace( /月/g , "" );
-      console.log(monthStr);
+      // console.log(monthStr);
       let monthNumber = parseInt(monthStr, 10);
-      console.log(monthNumber);
+      // console.log(monthNumber);
       let signup = this.state.signup;
       signup.birthday.month = monthNumber;
       this.setState({signup: signup});
     }
     if (/日/.test(event.target.innerText)) {
-      console.log(event.target.innerText);
+      // console.log(event.target.innerText);
       let dayStr = event.target.innerText.replace( /日/g , "" );
-      console.log(dayStr);
+      // console.log(dayStr);
       let dayNumber = parseInt(dayStr, 10);
-      console.log(dayNumber);
+      // console.log(dayNumber);
       let signup = this.state.signup;
       signup.birthday.day = dayNumber;
       this.setState({signup: signup});
@@ -74,27 +74,9 @@ class ManageSignupPage extends React.Component {
   }
 
   onClickSave(event) {
-    debugger;
+    // debugger;
     event.preventDefault();
     this.props.actions.userSignupRequest(this.state.signup);
-  }
-
-  signupRow(signup, index) {
-    return (
-      <div key={index}>
-        {signup.name} +
-        {signup.username} +
-        {signup.password} +
-        {signup.passwordConfirmation} +
-        {signup.gender} +
-        {signup.postalCode} +
-        {signup.address} +
-        {signup.email} +
-        {signup.mobilePhoneNumber} +
-        {signup.receiveEmail} +
-        {signup.receiveSNS} !!!!
-      </div>
-    );
   }
 
   render() {
@@ -106,7 +88,6 @@ class ManageSignupPage extends React.Component {
         onChange={this.onSignupChange}
         onClick={this.onClickSave}
         signupes={this.props.signup}
-        signupRow={this.signupRow}
         onBirthdayChange={this.onBirthdayChange}
       />
       </div>

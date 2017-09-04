@@ -33,7 +33,6 @@ const muiTheme = getMuiTheme({
     backgroundColor: '#fff'
   }
 });
-
 const styles = {
   block: {
     maxWidth: 250
@@ -49,7 +48,6 @@ const SignupForm = ({
   signupes,
   onChange,
   onClick,
-  signupRow,
   onBirthdayChange
 }) => {
     const radioBtnStyle = {
@@ -58,7 +56,7 @@ const SignupForm = ({
       gridTemplateColumns: "100px 1fr",
       gridTemplateRows: "35px",
       gridGap: "1px"
-    }
+    };
     const h4Styel = {
       marginTop: "40px"
     };
@@ -145,7 +143,7 @@ const SignupForm = ({
                      name="name"
                      type="text"
                      floatingLabelText="名前 *"
-                     floatingLabelFixed={true}
+                     floatingLabelFixed
                      onChange={onChange}
                      value={signup.name}
                   />
@@ -154,7 +152,7 @@ const SignupForm = ({
                    <TextField inputStyle={style_of_input_in_TextField}
                      name="username"
                      type="text"
-                     floatingLabelFixed={true}
+                     floatingLabelFixed
                      floatingLabelText="ユーザ名 *"
                      onChange={onChange}
                      value={signup.username}
@@ -165,7 +163,7 @@ const SignupForm = ({
                      name="password"
                      type="password"
                      floatingLabelText="Password *"
-                     floatingLabelFixed={true}
+                     floatingLabelFixed
                      onChange={onChange}
                      value={signup.password}
                    />
@@ -174,7 +172,7 @@ const SignupForm = ({
                    <TextField
                      name="passwordConfirmation"
                      type="password"
-                     floatingLabelFixed={true}
+                     floatingLabelFixed
                      floatingLabelText="Passwordの確認 *"
                      onChange={onChange}
                      value={signup.passwordConfirmation}
@@ -233,7 +231,7 @@ const SignupForm = ({
                    <TextField
                      name="postalCode"
                      type="text"
-                     floatingLabelFixed={true}
+                     floatingLabelFixed
                      floatingLabelText="郵便番号"
                      onChange={onChange}
                      value={signup.postalCode}
@@ -243,7 +241,7 @@ const SignupForm = ({
                    <TextField
                      name="address"
                      type="text"
-                     floatingLabelFixed={true}
+                     floatingLabelFixed
                      floatingLabelText="住所"
                      onChange={onChange}
                      value={signup.address}
@@ -253,7 +251,7 @@ const SignupForm = ({
                    <TextField
                      name="email"
                      type="text"
-                     floatingLabelFixed={true}
+                     floatingLabelFixed
                      floatingLabelText="E-mail"
                      onChange={onChange}
                      value={signup.email}
@@ -263,7 +261,7 @@ const SignupForm = ({
                    <TextField
                      name="mobilePhoneNumber"
                      type="text"
-                     floatingLabelFixed={true}
+                     floatingLabelFixed
                      floatingLabelText="携帯電話"
                      onChange={onChange}
                      value={signup.mobilePhoneNumber}
@@ -324,7 +322,6 @@ const SignupForm = ({
             </div>
           </MuiThemeProvider>
         </div>
-        {signupes.map(signupRow)}
     </form>
   </div>
   );
@@ -335,7 +332,6 @@ SignupForm.propTypes = {
   signupes: PropTypes.array.isRequired,
   onChange: PropTypes.func.isRequired,
   onClick: PropTypes.func.isRequired,
-  signupRow: PropTypes.func.isRequired,
   onBirthdayChange: PropTypes.func.isRequired
 };
 
