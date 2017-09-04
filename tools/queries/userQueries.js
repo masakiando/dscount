@@ -1,11 +1,11 @@
 import User from '../models/userModel';
 
 // *** queries *** //
-export function getSingle(showID) {
-  return User.where('id', parseInt(showID))
+export function getSingle(userID) {
+  return User.where('id', parseInt(userID))
   .first();
 }
 
-export function post(show) {
-  return User.insert(show, 'id');
+export function post(user) {
+  return User.insert(user, 'id');
 }
