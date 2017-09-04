@@ -5,7 +5,6 @@ exports.up = function(knex, Promise) {
     table.string('name').notNullable().unique();
     table.string('username').notNullable().unique();
     table.string('password_digest').notNullable();
-
     table.integer('birthdayY').notNullable();
     table.integer('birthdayM').notNullable();
     table.integer('birthdayD').notNullable();
@@ -16,9 +15,15 @@ exports.up = function(knex, Promise) {
     table.integer('mobilePhoneNumber').notNullable().unique();
     table.boolean('receiveEmail').notNullable();
     table.boolean('receiveSNS').notNullable();
-    table.boolean('suspended').notNullable().defaultTo(false);;
 
+    table.boolean('suspended').notNullable().defaultTo(false);;
     table.timestamps();
+    table.index([
+      'name',
+      'username',
+      'email',
+      'mobilePhoneNumber'
+    ]);
   });
 };
 
