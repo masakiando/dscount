@@ -12,7 +12,7 @@ exports.up = function(knex, Promise) {
     table.integer('postalCode').notNullable();
     table.string('address').notNullable();
     table.string('email').notNullable().unique();
-    table.integer('mobilePhoneNumber').notNullable().unique();
+    table.integer('mobilePhoneNumber').notNullable().unique();//integer => string
     table.boolean('receiveEmail').notNullable();
     table.boolean('receiveSNS').notNullable();
 
